@@ -13,11 +13,19 @@ const divSweetAlert = document.querySelector("#div-sweetalert")
 const contenedor1 = document.querySelector("#contenedor1")
 const idb = document.querySelector("#id-b")
 const ida = document.querySelector("#id-a")
- fetch("productos.json")
- .then((resp) => resp.json())
- .then((productos) => {
-console.log(productos);
 
+//  fetch("productos.json")
+//  .then((resp) => resp.json())
+//  .then((resp) =>{  
+//     copiar()
+    
+//     function copiar(){
+        
+//     }
+// })
+
+
+    
         cerrarA()
         abrirComestibles()
 
@@ -156,5 +164,3 @@ function guardarStorage(){
     localStorage.setItem("carrito", JSON.stringify(carrito))
 
 }
-})
-
