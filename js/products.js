@@ -1,7 +1,7 @@
 const productos = [
     {
         id: 1,
-        nombre: "banana 1Kg",
+        nombre: "Bananas Frescas el Kg",
         precioAnterior:80,
         precio: 65,
         cantidad: 1,
@@ -10,7 +10,7 @@ const productos = [
    
     {
         id: 2,
-        nombre: "manzana 1Kg",
+        nombre: "Manzana roja el Kg",
         precioAnterior:60,
         precio: 40,
         cantidad: 1,
@@ -18,7 +18,7 @@ const productos = [
     },
     {
         id: 3,
-        nombre: "naranja 1Kg",
+        nombre: "Naranjas Frescas el Kg",
         precioAnterior:45,
         precio: 34,
         cantidad: 1,
@@ -26,7 +26,7 @@ const productos = [
     },
     {
         id: 4,
-        nombre: "frutilla 1/2Kg",
+        nombre: "Frutillas el 1/2Kg",
         precioAnterior:72,
         precio: 57,
         cantidad: 1,
@@ -34,7 +34,7 @@ const productos = [
     },
     {
         id: 5,
-        nombre: "sandia 10Kg",
+        nombre: "Sandia Fresca los 10Kg",
         precioAnterior:240,
         precio: 220,
         cantidad: 1,
@@ -42,7 +42,7 @@ const productos = [
     },
     {
         id: 6,
-        nombre: "anana 1Kg",
+        nombre: "Ananá Fresca el Kg",
         precioAnterior:102,
         precio: 80,
         cantidad: 1,
@@ -51,7 +51,7 @@ const productos = [
 
     {
         id: 7,
-        nombre: "asado 1Kg",
+        nombre: "Asado Magro el Kg",
         precioAnterior:342,
         precio: 320,
         cantidad: 1,
@@ -60,7 +60,7 @@ const productos = [
    
     {
         id: 8,
-        nombre: "bife de cerdo 1Kg",
+        nombre: "Bife de Cerdo el Kg",
         precioAnterior:290,
         precio: 280,
         cantidad: 1,
@@ -68,7 +68,7 @@ const productos = [
     },
     {
         id: 9,
-        nombre: "carne picada 1Kg",
+        nombre: "Carne picada el Kg",
         precioAnterior:250,
         precio: 245,
         cantidad: 1,
@@ -76,7 +76,7 @@ const productos = [
     },
     {
         id: 10,
-        nombre: "muslos pollo 3Kg",
+        nombre: "Muslos de pollo 3Kg",
         precioAnterior:294,
         precio: 283,
         cantidad: 1,
@@ -84,7 +84,7 @@ const productos = [
     },
     {
         id: 11,
-        nombre: "salmon 1Kg",
+        nombre: "Salmón Fresco el Kg",
         precioAnterior:990,
         precio: 920,
         cantidad: 1,
@@ -92,12 +92,98 @@ const productos = [
     },
     {
         id: 12,
-        nombre: "falda vacuna 1Kg",
+        nombre: "Falda vacuna el Kg",
         precioAnterior:250,
         precio: 240,
         cantidad: 1,
         img:"./documents/falda_de_ternera.jpg"
     },
+    
+{ id: 13 ,
+    nombre: "Heladera Whirlpool",
+    precioAnterior:74530,
+    precio: 72700,
+    cantidad: 1,
+    img:"./documents/heladera1.webp"
+  },
+  { id: 14,
+      nombre: "Heladera Samsung 305",
+      precioAnterior:28660,
+      precio:27530 ,
+      cantidad: 1,
+      img:"./documents/heladera2.jpg"
+    },
+    { id: 15 ,
+      nombre:"Heladera Enxuta" ,
+      precioAnterior:14823,
+      precio: 13700,
+      cantidad: 1,
+      img:"./documents/heladera3.webp"
+    },
+    { id: 16 ,
+      nombre: "Heladera inverter",
+      precioAnterior:37799,
+      precio: 36999,
+      cantidad: 1,
+      img:"./documents/heladera4.webp"
+    },
+    { id: 17 ,
+      nombre: "Microondas Panavox",
+      precioAnterior:4450,
+      precio: 4100,
+      cantidad: 1,
+      img:"./documents/microondas1.webp" 
+    },
+    { id: 18 ,
+      nombre: "Microondas PK-EMD2222" ,
+      precioAnterior:4290,
+      precio: 3999 ,
+      cantidad: 1,
+      img:"./documents/microondas2.webp"
+    },
+    { id: 19 ,
+      nombre: "Microondas J-28M",
+      precioAnterior:15447,
+      precio: 14300,
+      cantidad: 1,
+      img:"./documents/microondas3.webp"
+    },
+    { id: 20 ,
+      nombre: "Licuadora Enxuta 1.5L",
+      precioAnterior:1521,
+      precio: 1350,
+      cantidad: 1,
+      img:"./documents/licuadora1.webp"
+    },
+    { id: 21 ,
+      nombre: "Licuadora Punktal 1.5L",
+      precioAnterior:1989,
+      precio: 1823,
+      cantidad: 1,
+      img:"./documents/licuadora2.webp"
+    },
+    { id: 22 ,
+      nombre: "Cocina James C 105",
+      precioAnterior:6787,
+      precio: 5890,
+      cantidad: 1,
+      img:"./documents/cocina1.webp"
+    },
+    { id: 23 ,
+      nombre:"Cocina Punktal PK735" ,
+      precioAnterior:13418,
+      precio: 12700,
+      cantidad: 1,
+      img:"./documents/cocina2.webp"
+    },
+    { id: 24 ,
+      nombre:"Cocina Tem Aniversario" ,
+      precioAnterior:5227,
+      precio: 4904,
+      cantidad: 1,
+      img:"./documents/cocina3.webp"
+    }
    
-
 ]
+
+
