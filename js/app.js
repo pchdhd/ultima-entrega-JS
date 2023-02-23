@@ -1,6 +1,5 @@
 let carrito = []
 let precio = 0
-let URLactual = window.location.href;
 const contenedor = document.querySelector('#contenedor')
 const buttonCarrito = document.getElementById("carrito-compras")
 const buttonId = document.getElementById("button-id")
@@ -8,23 +7,67 @@ const modalBody = document.querySelector("#modal-body")
 const carritoCompras = document.querySelector("#carrito-compras")
 const buttonVaciar = document.querySelector("#button-vaciar")
 const buttonComprar = document.querySelector("#button-comprar")
-const precioTotal = document.querySelector("#precio-total")
+let precioTotal = document.querySelector("#precio-total")
 const divSweetAlert = document.querySelector("#div-sweetalert")
 const contenedor1 = document.querySelector("#contenedor1")
 const idb = document.querySelector("#id-b")
 const ida = document.querySelector("#id-a")
+let minutosCounter = document.querySelector("#minutos")
+let segundosCounter = document.querySelector("#segundos")
+const contenedorContador = document.querySelector("#contenedor-contador-1")
+const divOfertas = document.querySelector("#div-ofertas")
+const divP = document.querySelector("#div-p")
+let i = 0
+let minutos = 5
 
-//  fetch("productos.json")
-//  .then((resp) => resp.json())
-//  .then((resp) =>{  
-//     copiar()
-    
-//     function copiar(){
-        
-//     }
-// })
+function abrirOfertas(){
+    productos.slice(24,29).forEach((product) => {
+        const {id, nombre, precio, precioAnterior, cantidad, img} = product
+        contenedor.innerHTML += `<div class="col-2 div-externo ">
+        <div class="div-interno"> <img src="${product.img}" alt="${product.nombre} ">
+            <p><b>${product.nombre} </b> <br>
+                <span> Antes $${product.precioAnterior} </span>
+                <br>Ahora Hasta 40% OFF $${product.precio}
+            </p>
+            <button onclick="agregarProducto(${product.id})" id="button-unico">Añadir a el carrito</button>
+        </div>`
+       })
+}
 
 
+divOfertas.addEventListener("click",()=>{
+    cerrarA()
+    abrirOfertas()   
+})
+segundosCounter.innerHTML = i
+minutosCounter.innerHTML = minutos;
+i--
+setTimeout(()=>{
+     i = 59
+     minutos = 4 
+},999)
+let id = setInterval( ()=> {
+segundosCounter.innerHTML = i
+minutosCounter.innerHTML = minutos;
+i--
+
+if(i == -1 ){
+    i = 59;
+    minutos--;
+    } 
+},1000)
+
+setTimeout(()=>{
+clearInterval(id)
+contenedorContador.innerHTML=''
+Swal.fire(
+    {title:"Se terminó el tiempo para la oferta de el día",
+      icon:"info"
+    });  
+contenedorContador.innerHTML = '<div class="contain-2 d-flex justify-content-center align-items-center" id="contenedor-contador"></div>'
+divP.innerHTML ='<p id="p-navbar-1">¡Tiempo para que acabe la oferta de el día!</p></div>'
+divOfertas.innerHTML=''
+},300000)
     
         cerrarA()
         abrirComestibles()
@@ -42,7 +85,8 @@ buttonVaciar.addEventListener("click", ()=> {
         {title:"Carrito Vacio",
           text:"Ya no tiene productos en el carrito",
           icon:"success"
-        });}
+        });
+        precioTotal.innerText  = carrito.reduce((acc, product)=> acc + product.precio * product.cantidad ,0)}
         else{
             Swal.fire(
                 {title:"Su carrito no tiene productos",
@@ -62,6 +106,7 @@ buttonComprar.addEventListener("click", ()=> {
               icon:"success"
             });
     carrito.length = []
+    precioTotal.innerText  = carrito.reduce((acc, product)=> acc + product.precio * product.cantidad ,0)
 }
 else{
     Swal.fire(
@@ -85,12 +130,13 @@ document.addEventListener('DOMContentLoaded', () => {
      ida.addEventListener("click",()=>{
         cerrarA()
         abrirComestibles()
-
      })
     function cerrarA(){
         contenedor.innerHTML = " "
     }
 function abrirComestibles(){
+    carritoCompras.textContent = " 🛒 " + carrito.length 
+    precioTotal.innerText = carrito.reduce((acc , product)=> acc + product.cantidad * product.precio, 0)
    productos.slice(0,12).forEach((product) => {
     const {id, nombre, precio, precioAnterior, cantidad, img} = product
     contenedor.innerHTML += `<div class="col-2 div-externo ">
@@ -124,6 +170,8 @@ function agregarProducto(id){
     const item = productos.find((product)=> product.id === id)
     carrito.push(item)
    mostrarCarrito()
+   console.log(carrito)
+   
 }
 
 const mostrarCarrito = () =>{
@@ -148,8 +196,9 @@ const mostrarCarrito = () =>{
     </div>`
 
     })
-    carritoCompras.textContent = " 🛒 " + carrito.length 
-    precioTotal.innerText = carrito.reduce((acc , product)=> acc + product.cantidad * product.precio, 0)
+        
+        
+    
     guardarStorage()
     
    
@@ -159,8 +208,10 @@ function eliminarProducto(id){
      carrito = carrito.filter((articulo) => articulo.id !== articulosid )
      console.log(carrito)
      mostrarCarrito()
+     
 }
 function guardarStorage(){
     localStorage.setItem("carrito", JSON.stringify(carrito))
-
+    precioTotal.innerText  = carrito.reduce((acc, product)=> acc + product.precio * product.cantidad ,0)
 }
+

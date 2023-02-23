@@ -15,9 +15,19 @@
 <body>
     <header>
         <nav>
-            <!-- <div class="atencion-cliente"><p>✉atencionalcliente20@SuperDescuento.com.uy <span class="atencion-cliente-span">Atención al Cliente: 0800 4143 de L a D de 08:00 a 20:00</span></p> </div> -->
-            <div class="barra-busqueda d-flex">
+            <div class="barra-busqueda d-flex align-items-center">
                 <h1 class="h1">SuperDescuento</h1>
+                <div id="div-p">
+                <p id="p-navbar">¡Tiempo para que acabe la oferta de el día!</p></div>
+                <div id="contenedor-contador-1">
+                <div class="contain d-flex justify-content-center align-items-center" id="contenedor-contador">
+                  
+                  <div class=" minutos d-flex justify-content-center align-items-center" id="minutos">
+                  </div>
+                  <p class="d-flex align-items-center p-tamaño">:</p>
+                  <div class=" segundos d-flex justify-content-center align-items-center " id="segundos">
+                  </div>
+              </div></div>
                 <a id="carrito-compras" class=" nav-link text-black-50"></a><a href="./pages/formindex.html" class="icon"><img src="./documents/contacto.png" alt="" ></a>
 
             </div>
@@ -30,7 +40,7 @@
                     <div class="col-8"></div>
                     <div class="col-1 box1"><li><div id="id-a" href="./index.html">Comestibles</div></li></div>
                    <div class="col-1 box1"><li><div id="id-b" >Electrodomesticos</div></li></div> 
-                   <div class="col-2"></div>
+                   <div class="col-2 d-flex justify-content-center" id="div-ofertas"><li><div id="id-c" >Ofertas del día</div></li></div>
                 </div>
                 </ul>
             </div>
@@ -38,7 +48,7 @@
             <div id="contenedor" class=" row contenedor"></div>
             </div>
 
-            <div class="botones d-flex justify-content-center" id="div-sweetalert"> <button id="button-vaciar"
+            <div class="botones d-flex justify-content-center mt-2" id="div-sweetalert"> <button id="button-vaciar"
                     class="btn btn-danger">Vaciar
                     carrito</button> <button id="button-comprar" class=" bg-exito ml-5"> Comprar ya </button></div>
             <div id="modal-body" class="carrito-lista">

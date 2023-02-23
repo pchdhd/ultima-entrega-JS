@@ -182,7 +182,42 @@ const productos = [
       precio: 4904,
       cantidad: 1,
       img:"./documents/cocina3.webp"
-    }
+    },
+    { id: 25 ,
+      nombre: "Silla Gamer",
+      precioAnterior:7999,
+      precio: 4980,
+      cantidad: 1,
+      img:"./documents/silla-gamer.webp"
+    },
+    { id: 26 ,
+      nombre: "Escritorio PC",
+      precioAnterior:2850,
+      precio: 1790,
+      cantidad: 1,
+      img:"./documents/escritorio-esquinero.webp"
+    },
+    { id: 27 ,
+      nombre: "Taladro Nappo",
+      precioAnterior:3299,
+      precio: 2097,
+      cantidad: 1,
+      img:"./documents/nappo.webp"
+    },
+    { id: 28 ,
+      nombre:"Luz Led 20W" ,
+      precioAnterior:3688,
+      precio: 2388,
+      cantidad: 1,
+      img:"./documents/led-20w.webp"
+    },
+    { id: 29 ,
+      nombre:"Huawei Y9a" ,
+      precioAnterior:21972,
+      precio: 9394,
+      cantidad: 1,
+      img:"./documents/huawei.webp"
+    },
    
 ]
 
