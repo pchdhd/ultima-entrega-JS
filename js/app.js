@@ -19,7 +19,6 @@ const divOfertas = document.querySelector("#div-ofertas")
 const divP = document.querySelector("#div-p")
 let i = 0
 let minutos = 5
-
 function abrirOfertas(){
     productos.slice(24,29).forEach((product) => {
         const {id, nombre, precio, precioAnterior, cantidad, img} = product
@@ -135,7 +134,7 @@ document.addEventListener('DOMContentLoaded', () => {
         contenedor.innerHTML = " "
     }
 function abrirComestibles(){
-    carritoCompras.textContent = " 🛒 " + carrito.length 
+   
     precioTotal.innerText = carrito.reduce((acc , product)=> acc + product.cantidad * product.precio, 0)
    productos.slice(0,12).forEach((product) => {
     const {id, nombre, precio, precioAnterior, cantidad, img} = product
@@ -171,7 +170,6 @@ function agregarProducto(id){
     carrito.push(item)
    mostrarCarrito()
    console.log(carrito)
-   
 }
 
 const mostrarCarrito = () =>{
@@ -213,5 +211,6 @@ function eliminarProducto(id){
 function guardarStorage(){
     localStorage.setItem("carrito", JSON.stringify(carrito))
     precioTotal.innerText  = carrito.reduce((acc, product)=> acc + product.precio * product.cantidad ,0)
+    carritoCompras.textContent = " 🛒 " + carrito.length 
 }
 

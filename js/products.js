@@ -1,6 +1,5 @@
 const productos = [
-    {
-        id: 1,
+    {   id: 1,
         nombre: "Bananas Frescas el Kg",
         precioAnterior:80,
         precio: 65,
