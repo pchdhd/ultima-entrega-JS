@@ -1,5 +1,6 @@
 let carrito = []
 let precio = 0
+let productos = [];
 const contenedor = document.querySelector('#contenedor')
 const buttonCarrito = document.getElementById("carrito-compras")
 const buttonId = document.getElementById("button-id")
@@ -17,6 +18,18 @@ let segundosCounter = document.querySelector("#segundos")
 const contenedorContador = document.querySelector("#contenedor-contador-1")
 const divOfertas = document.querySelector("#div-ofertas")
 const divP = document.querySelector("#div-p")
+fetch('./js/productos.json')
+.then(response => response.json())
+  .then(data => {
+    
+   
+const productos = Array.from(data);
+    
+   
+console.log(productos);
+setTimeout(()=>{
+
+
 let i = 0
 let minutos = 5
 function abrirOfertas(){
@@ -213,4 +226,5 @@ function guardarStorage(){
     precioTotal.innerText  = carrito.reduce((acc, product)=> acc + product.precio * product.cantidad ,0)
     carritoCompras.textContent = " 🛒 " + carrito.length 
 }
-
+},100)
+})
