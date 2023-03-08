@@ -1,6 +1,5 @@
 let carrito = []
 let precio = 0
-
 const buttonCarrito = document.getElementById("carrito-compras")
 const buttonId = document.getElementById("button-id")
 const modalBody = document.querySelector("#modal-body")
@@ -12,14 +11,19 @@ const divSweetAlert = document.querySelector("#div-sweetalert")
 const contenedor1 = document.querySelector("#contenedor1")
 const idb = document.querySelector("#id-b")
 const ida = document.querySelector("#id-a")
-let minutosCounter = document.querySelector("#minutos")
-let segundosCounter = document.querySelector("#segundos")
-const contenedorContador = document.querySelector("#contenedor-contador-1")
 const divOfertas = document.querySelector("#div-ofertas")
 const divP = document.querySelector("#div-p")
-let i = 0
-let minutos = 5
+const contenedorContador = document.querySelector("#contenedor-contador-1")
+const buttonUnico = document.getElementById("button-unico")
+
 carritoCompras.textContent = " 🛒 " + carrito.length
+
+carritoCompras.addEventListener("click", () => {
+    Swal.fire(
+        {
+            title: "Carrito de compras",
+        });           
+})
 
 function abrirOfertas() {
 
@@ -70,47 +74,11 @@ divOfertas.addEventListener("click", () => {
     cerrarA()
     abrirOfertas()
 })
-segundosCounter.innerHTML = i
-minutosCounter.innerHTML = minutos;
-i--
-setTimeout(() => {
-    i = 59
-    minutos = 4
-}, 999)
-let id = setInterval(() => {
-    segundosCounter.innerHTML = i
-    minutosCounter.innerHTML = minutos;
-    i--
-
-    if (i == -1) {
-        i = 59;
-        minutos--;
-    }
-}, 1000)
-
-setTimeout(() => {
-    clearInterval(id)
-    contenedorContador.innerHTML = ''
-    Swal.fire(
-        {
-            title: "Se terminó el tiempo para la oferta de el día",
-            icon: "info"
-        });
-    contenedorContador.innerHTML = '<div class="contain-2 d-flex justify-content-center align-items-center" id="contenedor-contador"></div>'
-    divP.innerHTML = '<p id="p-navbar-1">¡Tiempo para que acabe la oferta de el día!</p></div>'
-    divOfertas.innerHTML = ''
-}, 300000)
 
 cerrarA()
 abrirComestibles()
 
-carritoCompras.addEventListener("click", () => {
-    Swal.fire(
-        {
-            title: "Carrito de compras",
 
-        });
-})
 
 buttonVaciar.addEventListener("click", () => {
     if (carrito.length !== 0) {
@@ -201,16 +169,13 @@ function abrirElectrodomesticos() {
     })
 }
 
-const buttonUnico = document.getElementById("button-unico")
 
-buttonUnico.addEventListener("click", () => {
-    agregarProducto()
-})
+
 function agregarProducto(id) {
     const item = productos.find((product) => product.id === id)
     carrito.push(item)
     mostrarCarrito()
-    console.log(carrito)
+    console.log(carrito)  
 
 }
 
